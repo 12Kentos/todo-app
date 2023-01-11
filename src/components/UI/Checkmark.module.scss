@@ -1,0 +1,34 @@
+@import "../../Variables.scss";
+
+.checkbox {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--checkbox-border);
+  appearance: none;
+  margin: 2rem 2.4rem;
+
+  &:checked {
+    background: linear-gradient(
+      to bottom right,
+      var(--linear-gradient-1),
+      var(--linear-gradient-2)
+    );
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+      background-image: url(../../../images/icon-check.svg);
+      background-repeat: no-repeat;
+      background-size: 55%;
+      background-position: 58% 83%;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

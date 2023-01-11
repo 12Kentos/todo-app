@@ -1,7 +1,40 @@
-.heading-background {
-  background-image: url(../images/bg-desktop-dark.jpg);
+.main-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.background {
   background-size: cover;
   background-position: center;
   width: 100vw;
   height: 30rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: -10;
+
+  &.dark {
+    background-image: url(../images/bg-desktop-dark.jpg);
+  }
+
+  &.light {
+    background-image: url(../images/bg-desktop-light.jpg);
+  }
+}
+
+.heading-primary {
+  max-width: 54.1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4.8rem;
+  margin-top: 7rem;
 }

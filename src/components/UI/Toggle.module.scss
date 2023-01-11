@@ -1,0 +1,16 @@
+.toggle {
+  width: 2.6rem;
+  height: 2.6rem;
+
+  &.dark {
+    background-image: url("../../../images/icon-sun.svg");
+  }
+
+  &.light {
+    background-image: url("../../../images/icon-moon.svg");
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

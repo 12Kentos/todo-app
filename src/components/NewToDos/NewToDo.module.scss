@@ -1,0 +1,26 @@
+.wrapper {
+  max-width: 54rem;
+  width: 54rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--card-background);
+  border-radius: 0.5rem;
+  margin-bottom: 2.4rem;
+}
+
+.input-text {
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  color: var(--input-text-color);
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  caret-color: var(--input-text-caret);
+
+  &::placeholder {
+    color: var(--input-text-placeholder);
+  }
+}
