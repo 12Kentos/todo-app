@@ -23,7 +23,7 @@ const NewToDo = (props) => {
 
   return (
     <form onSubmit={submitHandler} className={styles.wrapper}>
-      <Checkmark />
+      <button className={styles.button} />
       <input
         type="text"
         placeholder="Create a new todo..."

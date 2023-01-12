@@ -7,6 +7,7 @@
   background-color: var(--card-background);
   border-radius: 0.5rem;
   margin-bottom: 2.4rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
 }
 
 .input-text {
@@ -22,5 +23,19 @@
 
   &::placeholder {
     color: var(--input-text-placeholder);
+  }
+}
+
+.button {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--checkbox-border);
+  appearance: none;
+  margin: 2rem 2.4rem;
+  background-color: var(--card-background);
+
+  &:hover {
+    cursor: pointer;
   }
 }
