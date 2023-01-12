@@ -1,4 +1,42 @@
+@import "../../Variables.scss";
+
 .wrapper {
   position: relative;
   z-index: 100;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--card-background);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--checkbox-border);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.todo-font {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+  color: var(--input-text-color);
+  width: 100%;
+}
+
+.delete {
+  margin-right: 2.4rem;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.active {
+  background-image: url(../../../images/icon-cross.svg);
 }

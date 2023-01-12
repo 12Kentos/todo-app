@@ -30,5 +30,11 @@
 
   &:hover {
     cursor: pointer;
+    border: 1px solid
+      linear-gradient(
+        to bottom right,
+        var(--linear-gradient-1),
+        var(--linear-gradient-2)
+      );
   }
 }

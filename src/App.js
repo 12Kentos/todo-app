@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./App.module.scss";
 import NewToDo from "./components/NewToDos/NewToDo";
 import ToDos from "./components/ToDos/ToDos";
@@ -9,7 +10,7 @@ function App() {
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  const itemsList = [
+  const DUMMYITEMSLIST = [
     { id: "id1", item: "Complete online JavaScript course", completed: true },
     { id: "id2", item: "Jog around the park 3x", completed: false },
     { id: "id3", item: "10 minutes meditation", completed: false },
@@ -21,6 +22,23 @@ function App() {
       completed: false,
     },
   ];
+
+  const [itemsList, setItemsList] = useState(DUMMYITEMSLIST);
+
+  const addItemHandler = (newItem) => {
+    setItemsList((prevState) => {
+      return [newItem, ...prevState];
+    });
+  };
+
+  const deleteItemHandler = (itemId) => {
+    console.log("In APP");
+    console.log(itemId);
+    setItemsList((prevItems) => {
+      const updatedItems = prevItems.filter((item) => item.id !== itemId);
+      return updatedItems;
+    });
+  };
 
   return (
     <div className={styles["main-body"]}>
@@ -34,9 +52,12 @@ function App() {
         <Toggle colorScheme={userPrefersDark} />
       </div>
       <div>
-        <NewToDo className={styles["new-todo"]} />
+        <NewToDo
+          className={styles["new-todo"]}
+          onAddItemHandler={addItemHandler}
+        />
       </div>
-      <ToDos />
+      <ToDos items={itemsList} onDeleteItemHandler={deleteItemHandler} />
     </div>
   );
 }

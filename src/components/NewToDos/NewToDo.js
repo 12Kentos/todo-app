@@ -7,7 +7,14 @@ const NewToDo = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (userInput.trim().length > 0) setUserInput("");
+    if (userInput.trim().length > 0) {
+      props.onAddItemHandler({
+        id: Math.random().toString(),
+        item: userInput,
+        completed: false,
+      });
+      setUserInput("");
+    }
   };
 
   const textChangeHandler = (e) => {
