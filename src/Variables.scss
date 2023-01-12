@@ -1,5 +1,5 @@
 :root {
-  --background-color: #f2f2f2;
+  --background-color: #171823;
   --white: #ffffff;
   --checkbox-border: #393a4b;
   --linear-gradient-1: #55ddff;
@@ -16,16 +16,32 @@
   :root {
     --background-color: #f2f2f2;
     --checkbox-border-active: #55ddff;
+    --card-background: #fff;
+    --checkbox-border: #e3e4f1;
+    --text-color-line-through: #d1d2da;
+    --input-text-color: #494c6b;
+    --input-text-placeholder: #393a4b;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #171823;
-    --checkbox-border: #393a4b;
-    --card-background: #25273d;
-    --input-text-color: #c8cbe7;
-    --input-text-placeholder: #767992;
-    --checkbox-border-active: #c058f3;
-  }
+.light-mode {
+  --background-color: #f2f2f2;
+  --checkbox-border-active: #55ddff;
+  --card-background: #fff;
+  --checkbox-border: #e3e4f1;
+  --text-color-line-through: #d1d2da;
+  --input-text-color: #494c6b;
+  --input-text-placeholder: #393a4b;
 }
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background-color: #171823;
+//     --checkbox-border: #393a4b;
+//     --card-background: #25273d;
+//     --input-text-color: #c8cbe7;
+//     --text-color-line-through: #4d5067;
+//     --input-text-placeholder: #767992;
+//     --checkbox-border-active: #c058f3;
+//   }
+// }
