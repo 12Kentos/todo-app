@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.filter-button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  letter-spacing: -0.19px;
+  color: var(--counter-text-color);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--counter-text-color-hover);
+  }
+}
+
+.active {
+  color: var(--input-text-caret);
+}

@@ -1,5 +1,6 @@
 import ToDoItem from "./ToDoItem";
 import styles from "./ToDoItemsList.module.scss";
+import ToDoItemsMenu from "./ToDoItemsMenu";
 
 const ToDoItemsList = (props) => {
   if (props.items.length === 0) {
@@ -24,6 +25,7 @@ const ToDoItemsList = (props) => {
           onDeleteItemHandler={props.onDeleteItemHandler}
         />
       ))}
+      <ToDoItemsMenu items={props.items} />
     </div>
   );
 };

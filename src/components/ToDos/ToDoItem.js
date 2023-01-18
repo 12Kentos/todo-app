@@ -10,11 +10,11 @@ const ToDoItem = (props) => {
   const [hovered, setHovered] = useState(false);
   const [checked, setChecked] = useState(props.checked);
 
-  const onHoverHandler = (e) => {
+  const onHoverHandler = () => {
     setHovered(!hovered);
   };
 
-  const checkedHandler = (item) => {
+  const checkedHandler = () => {
     setChecked(!checked);
   };
 

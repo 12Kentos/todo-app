@@ -6,11 +6,17 @@ import Heading from "./components/UI/Heading";
 import Toggle from "./components/UI/Toggle";
 
 function App() {
+  // COMMENT Below code gets what color preference the current user has on their system
+
   const userPrefersDark =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+  // COMMENT Below code sets the state of what their starting color shceme is
+
   const [colorScheme, setColorScheme] = useState(userPrefersDark);
+
+  // COMMENT Below code is boiler plate for the first load up of the site
 
   const DUMMYITEMSLIST = [
     { id: "id1", item: "Complete online JavaScript course", completed: true },
@@ -25,18 +31,25 @@ function App() {
     },
   ];
 
+  // COMMENT Below code sets the state of the list of items using the boiler plate data
+
   const [itemsList, setItemsList] = useState(DUMMYITEMSLIST);
+
+  // COMMENT Below code toggles the state of the current color scheme
 
   const toggleColorSchemeHandler = () => {
     setColorScheme(!colorScheme);
-    <body className={`${colorScheme ? styles.dark : styles.light}`}></body>;
   };
+
+  // COMMENT Below code adds a new item to the todo list
 
   const addItemHandler = (newItem) => {
     setItemsList((prevState) => {
       return [newItem, ...prevState];
     });
   };
+
+  // COMMENT Below code deletes the current item from the todo list
 
   const deleteItemHandler = (itemId) => {
     console.log("In APP");
