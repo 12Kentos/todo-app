@@ -1,6 +1,10 @@
 .toggle {
   width: 2.6rem;
   height: 2.6rem;
+  z-index: 10;
+  appearance: none;
+  border: none;
+  background-color: transparent;
 
   &.dark {
     background-image: url("../../../images/icon-sun.svg");

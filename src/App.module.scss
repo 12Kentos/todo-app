@@ -1,8 +1,31 @@
+@import "./Variables.scss";
+
+// *,
+// *::after,
+// *::before {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: inherit;
+// }
+
+// html {
+//   font-size: 62.5%;
+// }
+
+// body {
+//   box-sizing: border-box;
+//   font-family: "Josefin Sans", sans-serif;
+//   min-height: 100vh;
+//   background-color: var(--background-color);
+//   position: relative;
+// }
+
 .main-body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  background-color: var(--background-color);
   flex-direction: column;
 }
 
@@ -19,7 +42,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: -10;
+  // z-index: -10;
 
   &.dark {
     background-image: url(../images/bg-desktop-dark.jpg);

@@ -10,6 +10,8 @@ function App() {
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+  const [colorScheme, setColorScheme] = useState(userPrefersDark);
+
   const DUMMYITEMSLIST = [
     { id: "id1", item: "Complete online JavaScript course", completed: true },
     { id: "id2", item: "Jog around the park 3x", completed: false },
@@ -24,6 +26,11 @@ function App() {
   ];
 
   const [itemsList, setItemsList] = useState(DUMMYITEMSLIST);
+
+  const toggleColorSchemeHandler = () => {
+    setColorScheme(!colorScheme);
+    <body className={`${colorScheme ? styles.dark : styles.light}`}></body>;
+  };
 
   const addItemHandler = (newItem) => {
     setItemsList((prevState) => {
@@ -41,15 +48,19 @@ function App() {
   };
 
   return (
-    <div className={styles["main-body"]}>
+    <div
+      className={`${styles["main-body"]} ${
+        colorScheme ? styles["dark-mode"] : styles["light-mode"]
+      }`}
+    >
       <div
         className={`${styles.background} ${
-          userPrefersDark ? styles.dark : styles.light
+          colorScheme ? styles.dark : styles.light
         }`}
       ></div>
       <div className={styles["heading-primary"]}>
         <Heading />
-        <Toggle colorScheme={userPrefersDark} />
+        <Toggle colorScheme={colorScheme} onClick={toggleColorSchemeHandler} />
       </div>
       <div>
         <NewToDo

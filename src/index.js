@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.module.scss";
+import styles from "./index.module.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
@@ -8,6 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
+    <button>Testing</button>
   </React.StrictMode>
 );
 

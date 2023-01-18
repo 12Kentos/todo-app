@@ -34,6 +34,20 @@
   --input-text-placeholder: #393a4b;
 }
 
+.dark-mode {
+  --background-color: #171823;
+  --white: #ffffff;
+  --checkbox-border: #393a4b;
+  --linear-gradient-1: #55ddff;
+  --linear-gradient-2: #c058f3;
+  --card-background: #25273d;
+  --input-text-color: #c8cbe7;
+  --input-text-placeholder: #767992;
+  --input-text-caret: #3a7cfd;
+  --text-color-line-through: #4d5067;
+  --checkbox-border-active: #c058f3;
+}
+
 // @media (prefers-color-scheme: dark) {
 //   :root {
 //     --background-color: #171823;

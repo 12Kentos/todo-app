@@ -2,11 +2,12 @@ import styles from "./Toggle.module.scss";
 
 const Toggle = (props) => {
   return (
-    <div
+    <button
       className={`${styles.toggle} ${
         props.colorScheme ? styles.dark : styles.light
       }`}
-    ></div>
+      onClick={props.onClick}
+    ></button>
   );
 };
 
