@@ -10,6 +10,7 @@ const ToDos = (props) => {
       onSortActiveHandler={props.onSortActiveHandler}
       onSortCompletedHandler={props.onSortCompletedHandler}
       onSortAllHandler={props.onSortAllHandler}
+      onDeleteCompletedItemHandler={props.onDeleteCompletedItemHandler}
     />
   );
 };

@@ -53,6 +53,9 @@ function App() {
     setItemsList((prevState) => {
       return [newItem, ...prevState];
     });
+    setFilteredItemsList((prevState) => {
+      return [newItem, ...prevState];
+    });
   };
 
   // COMMENT Below code deletes the current item from the todo list
@@ -64,6 +67,17 @@ function App() {
     });
     setItemsList((prevItems) => {
       const updatedItems = prevItems.filter((item) => item.id !== itemId);
+      return updatedItems;
+    });
+  };
+
+  const deleteCompletedItemHandler = (itemId) => {
+    setFilteredItemsList((prevItems) => {
+      const updatedItems = prevItems.filter((item) => !item.completed);
+      return updatedItems;
+    });
+    setItemsList((prevItems) => {
+      const updatedItems = prevItems.filter((item) => !item.completed);
       return updatedItems;
     });
   };
@@ -115,6 +129,7 @@ function App() {
         onSortActiveHandler={sortActive}
         onSortCompletedHandler={sortCompleted}
         onSortAllHandler={sortAll}
+        onDeleteCompletedItemHandler={deleteCompletedItemHandler}
       />
     </div>
   );

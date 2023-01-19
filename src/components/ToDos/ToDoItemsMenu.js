@@ -10,7 +10,7 @@ const ToDoItemsMenu = (props) => {
 
   return (
     <div className={styles.wrapper}>
-      {props.items.length < 2 ? (
+      {props.items.length === 1 ? (
         <p className={styles.counter}>{props.items.length} Item left</p>
       ) : (
         plural
@@ -20,7 +20,12 @@ const ToDoItemsMenu = (props) => {
         onSortCompletedHandler={props.onSortCompletedHandler}
         onSortAllHandler={props.onSortAllHandler}
       />
-      <button className={styles["menu-button"]}>Clear Completed</button>
+      <button
+        className={styles["menu-button"]}
+        onClick={props.onDeleteCompletedItemHandler}
+      >
+        Clear Completed
+      </button>
     </div>
   );
 };
