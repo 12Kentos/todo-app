@@ -19,9 +19,10 @@ const ToDos = (props) => {
 
   return (
     <ToDoItemsList
-      // items={props.items}
-      items={testing}
+      items={props.items}
       onDeleteItemHandler={props.onDeleteItemHandler}
+      onSortActiveHandler={props.onSortActiveHandler}
+      onSortCompletedHandler={props.onSortCompletedHandler}
     />
   );
 };

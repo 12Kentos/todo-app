@@ -35,6 +35,8 @@ function App() {
 
   const [itemsList, setItemsList] = useState(DUMMYITEMSLIST);
 
+  const [filteredItemsList, setFilteredItemsList] = useState(itemsList);
+
   // COMMENT Below code toggles the state of the current color scheme
 
   const toggleColorSchemeHandler = () => {
@@ -60,6 +62,22 @@ function App() {
     });
   };
 
+  const sortActive = () => {
+    setItemsList(
+      itemsList.filter((item) => {
+        return !item.completed;
+      })
+    );
+  };
+
+  const sortCompleted = () => {
+    setItemsList(
+      itemsList.filter((item) => {
+        return item.completed;
+      })
+    );
+  };
+
   return (
     <div
       className={`${styles["main-body"]} ${
@@ -81,7 +99,12 @@ function App() {
           onAddItemHandler={addItemHandler}
         />
       </div>
-      <ToDos items={itemsList} onDeleteItemHandler={deleteItemHandler} />
+      <ToDos
+        items={itemsList}
+        onDeleteItemHandler={deleteItemHandler}
+        onSortActiveHandler={sortActive}
+        onSortCompletedHandler={sortCompleted}
+      />
     </div>
   );
 }

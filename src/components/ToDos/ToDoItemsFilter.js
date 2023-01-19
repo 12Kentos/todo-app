@@ -2,7 +2,7 @@ import { useState, useReducer } from "react";
 import styles from "./ToDoItemsFilter.module.scss";
 import Button from "../UI/Button";
 
-const ToDoItemsFilter = () => {
+const ToDoItemsFilter = (props) => {
   const [allBtn, setAllBtn] = useState(true);
   const [activeBtn, setActiveBtn] = useState(false);
   const [completedBtn, setCompletedBtn] = useState(false);
@@ -20,6 +20,7 @@ const ToDoItemsFilter = () => {
       setAllBtn(false);
       setCompletedBtn(false);
       setActiveBtn(!activeBtn);
+      props.onSortActiveHandler();
     }
   };
 
@@ -28,6 +29,7 @@ const ToDoItemsFilter = () => {
       setAllBtn(false);
       setActiveBtn(false);
       setCompletedBtn(!completedBtn);
+      props.onSortCompletedHandler();
     }
   };
 

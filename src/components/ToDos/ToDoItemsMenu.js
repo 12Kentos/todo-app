@@ -15,7 +15,10 @@ const ToDoItemsMenu = (props) => {
       ) : (
         plural
       )}
-      <ToDoItemsFilter />
+      <ToDoItemsFilter
+        onSortActiveHandler={props.onSortActiveHandler}
+        onSortCompletedHandler={props.onSortCompletedHandler}
+      />
       <button className={styles["menu-button"]}>Clear Completed</button>
     </div>
   );
