@@ -23,12 +23,14 @@ const ToDoItemsList = (props) => {
           item={item.item}
           checked={item.completed}
           onDeleteItemHandler={props.onDeleteItemHandler}
+          object1={item}
         />
       ))}
       <ToDoItemsMenu
         items={props.items}
         onSortActiveHandler={props.onSortActiveHandler}
         onSortCompletedHandler={props.onSortCompletedHandler}
+        onSortAllHandler={props.onSortAllHandler}
       />
     </div>
   );

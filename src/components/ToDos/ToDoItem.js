@@ -16,6 +16,7 @@ const ToDoItem = (props) => {
 
   const checkedHandler = () => {
     setChecked(!checked);
+    props.object1.completed = !props.object1.completed;
   };
 
   return (

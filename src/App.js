@@ -19,7 +19,11 @@ function App() {
   // COMMENT Below code is boiler plate for the first load up of the site
 
   const DUMMYITEMSLIST = [
-    { id: "id1", item: "Complete online JavaScript course", completed: true },
+    {
+      id: "id1",
+      item: "Complete online JavaScript course",
+      completed: true,
+    },
     { id: "id2", item: "Jog around the park 3x", completed: false },
     { id: "id3", item: "10 minutes meditation", completed: false },
     { id: "id4", item: "Read for 1 hour", completed: false },
@@ -54,8 +58,10 @@ function App() {
   // COMMENT Below code deletes the current item from the todo list
 
   const deleteItemHandler = (itemId) => {
-    console.log("In APP");
-    console.log(itemId);
+    setFilteredItemsList((prevItems) => {
+      const updatedItems = prevItems.filter((item) => item.id !== itemId);
+      return updatedItems;
+    });
     setItemsList((prevItems) => {
       const updatedItems = prevItems.filter((item) => item.id !== itemId);
       return updatedItems;
@@ -63,7 +69,7 @@ function App() {
   };
 
   const sortActive = () => {
-    setItemsList(
+    setFilteredItemsList(
       itemsList.filter((item) => {
         return !item.completed;
       })
@@ -71,11 +77,15 @@ function App() {
   };
 
   const sortCompleted = () => {
-    setItemsList(
+    setFilteredItemsList(
       itemsList.filter((item) => {
         return item.completed;
       })
     );
+  };
+
+  const sortAll = () => {
+    setFilteredItemsList(itemsList);
   };
 
   return (
@@ -100,10 +110,11 @@ function App() {
         />
       </div>
       <ToDos
-        items={itemsList}
+        items={filteredItemsList}
         onDeleteItemHandler={deleteItemHandler}
         onSortActiveHandler={sortActive}
         onSortCompletedHandler={sortCompleted}
+        onSortAllHandler={sortAll}
       />
     </div>
   );

@@ -18,6 +18,7 @@ const ToDoItemsMenu = (props) => {
       <ToDoItemsFilter
         onSortActiveHandler={props.onSortActiveHandler}
         onSortCompletedHandler={props.onSortCompletedHandler}
+        onSortAllHandler={props.onSortAllHandler}
       />
       <button className={styles["menu-button"]}>Clear Completed</button>
     </div>

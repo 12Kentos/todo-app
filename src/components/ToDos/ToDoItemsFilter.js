@@ -12,6 +12,7 @@ const ToDoItemsFilter = (props) => {
       setActiveBtn(false);
       setCompletedBtn(false);
       setAllBtn(!allBtn);
+      props.onSortAllHandler();
     }
   };
 
