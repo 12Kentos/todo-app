@@ -34,34 +34,8 @@ const ToDoItemsFilter = (props) => {
     }
   };
 
-  // const [buttonActive, setButtonActive] = useState(false);
-
-  // const onClickHandler = () => {
-  //   setButtonActive(!buttonActive);
-  // };
-
-  // const buttonStyles = `${styles["filter-button"]} ${
-  //   buttonActive ? styles["active"] : ""
-  // }`;
-
-  // const buttonArray = [
-  //   { id: "button1", text: "All", active: true },
-  //   { id: "button2", text: "Active", active: false },
-  //   { id: "button3", text: "Completed", active: false },
-  // ];
-
   return (
     <div className={styles.wrapper}>
-      {/* {buttonArray.map((btn) => (
-        <Button
-          className={styles["filter-button"]}
-          key={btn.id}
-          id={btn.id}
-          active={btn.active}
-        >
-          {btn.text}
-        </Button>
-      ))} */}
       <button
         className={`${styles["filter-button"]} ${
           allBtn ? styles["active"] : ""

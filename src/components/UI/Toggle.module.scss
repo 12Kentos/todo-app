@@ -8,10 +8,14 @@
 
   &.dark {
     background-image: url("../../../images/icon-sun.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   &.light {
     background-image: url("../../../images/icon-moon.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   &:hover {

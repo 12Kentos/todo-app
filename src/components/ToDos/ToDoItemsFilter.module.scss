@@ -22,3 +22,9 @@
 .active {
   color: var(--input-text-caret);
 }
+
+@media (max-width: 30em) {
+  html {
+    font-size: 48%;
+  }
+}

@@ -113,24 +113,27 @@ function App() {
           colorScheme ? styles.dark : styles.light
         }`}
       ></div>
-      <div className={styles["heading-primary"]}>
-        <Heading />
-        <Toggle colorScheme={colorScheme} onClick={toggleColorSchemeHandler} />
-      </div>
-      <div>
+      <div className={styles.testing}>
+        <div className={styles["heading-primary"]}>
+          <Heading />
+          <Toggle
+            colorScheme={colorScheme}
+            onClick={toggleColorSchemeHandler}
+          />
+        </div>
         <NewToDo
           className={styles["new-todo"]}
           onAddItemHandler={addItemHandler}
         />
+        <ToDos
+          items={filteredItemsList}
+          onDeleteItemHandler={deleteItemHandler}
+          onSortActiveHandler={sortActive}
+          onSortCompletedHandler={sortCompleted}
+          onSortAllHandler={sortAll}
+          onDeleteCompletedItemHandler={deleteCompletedItemHandler}
+        />
       </div>
-      <ToDos
-        items={filteredItemsList}
-        onDeleteItemHandler={deleteItemHandler}
-        onSortActiveHandler={sortActive}
-        onSortCompletedHandler={sortCompleted}
-        onSortAllHandler={sortAll}
-        onDeleteCompletedItemHandler={deleteCompletedItemHandler}
-      />
     </div>
   );
 }
